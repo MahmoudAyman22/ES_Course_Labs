@@ -1,27 +1,21 @@
-/*
-* APPLICATION LAYER
+#include "STD_TYPES.h"
+extern void EXT_INT_Test(void);
+extern void Timer_Test(void);
+extern void PWM_Test(void);
+extern void ADC_Test(void);
+extern void UART_Test(void);
+extern void SPI_Test(void);
+extern void I2C_Test(void);
 
-
-*/
-#include "../HAL/LED/LED_interface.h"
-#include "../MCAL/GPIO/GPIO_interface.h"
-
-void delay(void)
-{
-    unsigned int i;
-    for(i = 0; i < 50000; i++);
-}
-
-void main()
-{
-    LED_Init(GPIO_PORTB, GPIO_PIN0);
-
-    while(1)
-    {
-        LED_On(GPIO_PORTB, GPIO_PIN0);
-        delay();
-
-        LED_Off(GPIO_PORTB, GPIO_PIN0);
-        delay();
+void main(void) {
+    /* Please Uncomment ONE of the test functions below at a time */
+     // EXT_INT_Test();   
+     // Timer_Test();    
+     // PWM_Test();      
+     // ADC_Test();       
+     // UART_Test();      /* Echoes received characters */
+     // SPI_Test();       /* SPI Master transmission */
+     // I2C_Test();       /* I2C Master transmission */
+    while (1) {
     }
 }
